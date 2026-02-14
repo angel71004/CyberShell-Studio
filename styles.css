@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  background-color: #0d1117;
+  color: #00ff99;
+}
+
+header {
+  background-color: #161b22;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-bottom: 1px solid #00ff99;
+}
+
+header h1 {
+  color: #00ff99;
+  margin: 0;
+}
+
+header p {
+  color: #8b949e;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.tool-card {
+  background: #161b22;
+  border: 1px solid #00ff99;
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin: 1rem;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0,255,153,0.2);
+  transition: transform 0.2s ease;
+}
+
+.tool-card:hover {
+  transform: scale(1.03);
+}
+
+.tool-card h2 {
+  color: #00ff99;
+  margin-bottom: 0.5rem;
+}
+
+.tool-card p {
+  color: #8b949e;
+  font-size: 0.9rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.7rem;
+  border-radius: 4px;
+  border: 1px solid #00ff99;
+  background-color: #0d1117;
+  color: #00ff99;
+}
+
+button {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  border: none;
+  background-color: #00ff99;
+  color: #0d1117;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #00cc7a;
+}
+
+a {
+  color: #00ff99;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.output {
+  background: black;
+  color: #00ff00;
+  font-family: monospace;
+  padding: 0.75rem;
+  border-radius: 4px;
+  height: 120px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  margin-top: 0.5rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #161b22;
+  border-top: 1px solid #00ff99;
+  color: #8b949e;
+}
