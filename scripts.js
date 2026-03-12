@@ -63,10 +63,28 @@ function runDemo(index) {
   let output = `Running ${tool.name}...\n`;
   
   if (tool.name === "Port Scanner") {
-    output += "Port 22 is OPEN\nPort 80 is OPEN\nScan Complete!";
-  } else if (tool.name === "Subnet Scanner") {
+  const start = parseInt(inputs[1]);
+  const end = parseInt(inputs[2]);
+
+  output += `Scanning ports ${start} - ${end}...\n`;
+
+  if (start <= 22 && end >= 22) output += "Port 22 OPEN\n";
+  if (start <= 80 && end >= 80) output += "Port 80 OPEN\n";
+  if (start <= 443 && end >= 443) output += "Port 443 OPEN\n";
+
+  output += "Scan Complete!";
+}
+  
+else if (tool.name === "Subnet Scanner") {
+    output += "Live Host Found: 127.0.0.1\nScan Complete!";
+}
+  
+  else if (tool.name === "Subnet Scanner") {
     output += "Host 127.0.0.1 is UP\nScan Complete!";
-  } else if (tool.name === "Password Strength Checker") {
+  }
+  
+  
+  else if (tool.name === "Password Strength Checker") {
     const password = inputs[0];
     let score = 0;
 
