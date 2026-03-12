@@ -76,7 +76,14 @@ function runDemo(index) {
 }
   
 else if (tool.name === "Subnet Scanner") {
-    output += "Live Host Found: 127.0.0.1\nScan Complete!";
+    const subnet = inputs[0];
+
+    // Extract the IP part before "/"
+    const ip = subnet.split("/")[0];
+
+    output += `Scanning subnet ${subnet}...\n`;
+    output += `Live Host Found: ${ip}\n`;
+    output += "Scan Complete!";
 }
   
   else if (tool.name === "Subnet Scanner") {
