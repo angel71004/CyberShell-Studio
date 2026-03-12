@@ -60,8 +60,8 @@ function runDemo(index) {
   const inputs = tool.inputFields.map((_, i) => document.getElementById(`input-${index}-${i}`).value);
   const outputDiv = document.getElementById(`output-${index}`);
 
-  let output = `(kali㉿kali)-[~/CyberShell]\n$ ./script.sh ${inputs.join(" ")}\n`;
-
+  let output = `Running ${tool.name}...\n`;
+  
   if (tool.name === "Port Scanner") {
     output += "Port 22 is OPEN\nPort 80 is OPEN\nScan Complete!";
   } else if (tool.name === "Subnet Scanner") {
