@@ -76,13 +76,16 @@ function runDemo(index) {
 }
   
 else if (tool.name === "Subnet Scanner") {
-    const subnet = inputs[0];
 
-    // Extract the IP part before "/"
-    const ip = subnet.split("/")[0];
+    const subnet = inputs[0];
+    const baseIP = subnet.split("/")[0];
 
     output += `Scanning subnet ${subnet}...\n`;
-    output += `Live Host Found: ${ip}\n`;
+
+    output += `Live Host Found: ${baseIP}\n`;
+    output += `Live Host Found: ${baseIP.replace(/0$/, "1")}\n`;
+    output += `Live Host Found: ${baseIP.replace(/0$/, "10")}\n`;
+
     output += "Scan Complete!";
 }
   
