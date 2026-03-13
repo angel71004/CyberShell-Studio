@@ -74,7 +74,7 @@ function runDemo(index) {
 
   output += "Scan Complete!";
 }
-  else if (tool.name === "Subnet Scanner") {
+else if (tool.name === "Subnet Scanner") {
 
   const subnet = inputs[0];
   const ip = subnet.split("/")[0];
@@ -83,11 +83,6 @@ function runDemo(index) {
   output += `Live Host Found: ${ip}\n`;
   output += "Scan Complete!";
 }
-
-  
-  else if (tool.name === "Subnet Scanner") {
-    output += "Host 127.0.0.1 is UP\nScan Complete!";
-  }
   
   
   else if (tool.name === "Password Strength Checker") {
