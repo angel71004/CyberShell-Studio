@@ -74,22 +74,16 @@ function runDemo(index) {
 
   output += "Scan Complete!";
 }
-  
-else if (tool.name === "Subnet Scanner") {
+  else if (tool.name === "Subnet Scanner") {
 
   const subnet = inputs[0];
-  const base = subnet.split("/")[0].split(".");
-  const network = base[0] + "." + base[1] + "." + base[2];
+  const ip = subnet.split("/")[0];
 
   output += `Scanning subnet ${subnet}...\n`;
-
-  for (let i = 0; i < 5; i++) {
-    const host = Math.floor(Math.random() * 254) + 1;
-    output += `Live Host Found: ${network}.${host}\n`;
-  }
-
+  output += `Live Host Found: ${ip}\n`;
   output += "Scan Complete!";
 }
+
   
   else if (tool.name === "Subnet Scanner") {
     output += "Host 127.0.0.1 is UP\nScan Complete!";
