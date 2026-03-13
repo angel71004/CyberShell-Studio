@@ -61,29 +61,57 @@ function runDemo(index) {
   const outputDiv = document.getElementById(`output-${index}`);
 
   let output = `Running ${tool.name}...\n`;
-  
+
+
   if (tool.name === "Port Scanner") {
+
   const start = parseInt(inputs[1]);
   const end = parseInt(inputs[2]);
 
+ if (end > 65535) {
+    output += "Error: Port range must be between 1 and 65535\n";
+    return;
+  }
+
+  
   output += `Scanning ports ${start} - ${end}...\n`;
 
-  if (start <= 22 && end >= 22) output += "Port 22 OPEN\n";
-  if (start <= 80 && end >= 80) output += "Port 80 OPEN\n";
-  if (start <= 443 && end >= 443) output += "Port 443 OPEN\n";
+  // Example open ports list
+  const openPorts = [21, 22, 25, 53, 80, 110, 139, 143, 443, 445, 3306, 8080];
+
+  let found = false;
+
+  for (let port of openPorts) {
+    if (port >= start && port <= end) {
+      output += `Port ${port} OPEN\n`;
+      found = true;
+    }
+  }
+
+  if (!found) {
+    output += "No open ports found\n";
+  }
 
   output += "Scan Complete!";
 }
+
+    
 else if (tool.name === "Subnet Scanner") {
 
   const subnet = inputs[0];
-  const ip = subnet.split("/")[0];
+  const base = subnet.split("/")[0].split(".");
+  const network = base[0] + "." + base[1] + "." + base[2];
 
   output += `Scanning subnet ${subnet}...\n`;
-  output += `Live Host Found: ${ip}\n`;
+
+  // Generate some fake live hosts for demo
+  for (let i = 1; i <= 5; i++) {
+    const host = Math.floor(Math.random() * 254) + 1;
+    output += `Live Host Found: ${network}.${host}\n`;
+  }
+
   output += "Scan Complete!";
 }
-  
   
   else if (tool.name === "Password Strength Checker") {
     const password = inputs[0];
